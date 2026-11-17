@@ -12,7 +12,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231a1029'/%3E%3Ctext x='50' y='66' font-size='56' text-anchor='middle' font-family='sans-serif' font-weight='700' fill='%23c4a7ff'%3EA%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Rajdhani:ital,wght@0,500;0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -50,7 +50,7 @@
   <main id="main">
     <!-- HERO -->
     <section class="hero" id="top">
-      <p class="eyebrow mono">&gt; hello, world</p>
+      <p class="eyebrow mono">&#9654; New Game</p>
       <h1>I'm Aravin.<br><span class="accent">I build <span id="rotator" class="rotator">backend systems</span></span><span class="caret" aria-hidden="true">|</span></h1>
       <p class="lead">Software developer with three industry roles at Bell and Virgin Plus, and currently pursuing a Master's in Computer Science at the University of Colorado Boulder.</p>
       <div class="cta">
@@ -58,17 +58,16 @@
         <a class="btn" href="#contact">Get in touch</a>
       </div>
 
-      <div class="code-card mono" aria-label="Profile summary">
-        <div class="code-bar"><i></i><i></i><i></i><span>profile.json</span></div>
-<pre><span class="k">{</span>
-  <span class="s">"name"</span>: <span class="v">"Aravin Suganthan"</span>,
-  <span class="s">"role"</span>: <span class="v">"Software Developer"</span>,
-  <span class="s">"studying"</span>: <span class="v">"MS Computer Science, CU Boulder"</span>,
-  <span class="s">"since"</span>: <span class="v">"Sept 2026"</span>,
-  <span class="s">"focus"</span>: [<span class="v">"APIs"</span>, <span class="v">"Microservices"</span>, <span class="v">"Cloud"</span>],
-  <span class="s">"openToWork"</span>: <span class="v">true</span>
-<span class="k">}</span></pre>
-      </div>
+      <nav class="game-menu" aria-label="Main menu">
+        <p class="menu-title">Main Menu</p>
+        <ul>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </section>
 
     <!-- ABOUT -->
@@ -166,7 +165,6 @@
           <div class="chips small"><span>React</span><span>Node.js</span><span>PostgreSQL</span><span>RabbitMQ</span><span>Docker</span></div>
           <div class="card-links">
             <a class="btn small" href="https://github.com/Aravin-S/RabbitMQ-Banking-System" target="_blank" rel="noopener">GitHub</a>
-            <a class="btn small ghost" href="#" aria-disabled="true">Live demo</a>
           </div>
         </article>
 
@@ -182,7 +180,6 @@
           <div class="chips small"><span>React</span><span>Node.js</span><span>OpenCV</span><span>PyAutoGUI</span></div>
           <div class="card-links">
             <a class="btn small" href="https://github.com/Aravin-S/ML-Eye-Controlled-Mouse" target="_blank" rel="noopener">GitHub</a>
-            <a class="btn small ghost" href="#" aria-disabled="true">Live demo</a>
           </div>
         </article>
       </div>
