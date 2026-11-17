@@ -7,6 +7,29 @@
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 
+  // Light/dark theme toggle (initial theme is set by the inline script in <head>)
+  var root = document.documentElement;
+  var themeBtn = document.getElementById('themeBtn');
+  var themeMeta = document.querySelector('meta[name="theme-color"]');
+  var themeQuery = window.matchMedia('(prefers-color-scheme: light)');
+  function hasSavedTheme() {
+    try { var t = localStorage.getItem('theme'); return t === 'light' || t === 'dark'; } catch (e) { return false; }
+  }
+  function applyTheme(t) {
+    root.setAttribute('data-theme', t);
+    themeBtn.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+    if (themeMeta) themeMeta.setAttribute('content', t === 'dark' ? '#1a1029' : '#f7f2ff');
+  }
+  applyTheme(root.getAttribute('data-theme') === 'light' ? 'light' : 'dark');
+  themeBtn.addEventListener('click', function () {
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+  // Follow browser changes until the visitor picks a theme themselves
+  var onSystemChange = function (e) { if (!hasSavedTheme()) applyTheme(e.matches ? 'light' : 'dark'); };
+  if (themeQuery.addEventListener) themeQuery.addEventListener('change', onSystemChange);
+
   // Mobile menu
   var menuBtn = document.getElementById('menuBtn');
   var sidebar = document.getElementById('sidebar');
